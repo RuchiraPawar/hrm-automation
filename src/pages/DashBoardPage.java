@@ -7,6 +7,7 @@ public class DashBoardPage extends BasePage {
 
 	public DashBoardPage(WebDriver driver) {
 		super(driver);
+		pageUrl="http://hrm.seleniumminutes.com/symfony/web/index.php/dashboard";
 	}
 
 	public String getGreeting() {

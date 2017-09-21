@@ -14,8 +14,8 @@ public class BasePage {
         super();
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 5);
-		baseUrl = "http://hrm.seleniumminutes.com";
-		pageUrl=baseUrl+"/symfony/web/index.php";
+		
+		baseUrl="http://hrm.seleniumminutes.com/";
 	}
 
 	

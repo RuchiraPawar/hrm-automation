@@ -8,7 +8,7 @@ public class AddEmployeePage extends BasePage {
 	private final String empForm="#frmAddEmp";
 	public AddEmployeePage(WebDriver driver) {
 		super(driver);
-        pageUrl="http://hrm.seleniumminutes.com/symfony/web/index.php/pim/addEmployee";
+        pageUrl=baseUrl+"symfony/web/index.php/pim/addEmployee";
 	}
 
 	public void enterFullName(String firstName, String middleName, String lastName) {

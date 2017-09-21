@@ -17,6 +17,7 @@ public class BaseTest {
 		driver = new ChromeDriver();
 		loginPage = new LoginPage(driver);
 		loginPage.gotoPage();
+		
 	}
 
 	@After

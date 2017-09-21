@@ -10,9 +10,8 @@ import pages.AddEmployeePage;
 import pages.LoginPage;
 import pages.PimPage;
 
-public class EmployeeSearchPOMTestCase extends BaseTest {
+public class EmployeeSearchPOMTestCase extends AdminLogin {
 
-	private LoginPage loginPage;
 	private PimPage pimPage;
 	private AddEmployeePage addEmployeePage;
 
@@ -21,10 +20,7 @@ public class EmployeeSearchPOMTestCase extends BaseTest {
 
 		pimPage = new PimPage(driver);
 		addEmployeePage = new AddEmployeePage(driver);
-		loginPage=new LoginPage(driver);
-		loginPage.gotoPage();
-		loginPage.login("admin", "Password");
-		
+		login();
 	}
 
 	@Test
@@ -41,7 +37,7 @@ public class EmployeeSearchPOMTestCase extends BaseTest {
 		Thread.sleep(3000);
 		pimPage.gotoPage();
 		pimPage.searchById(empId);
-		
+
 		assertEquals(empId, driver.findElement(By.xpath("//tbody//td[2]/a")).getText());
 		assertEquals(fname, driver.findElement(By.xpath("//tbody//td[3]/a")).getText());
 		assertEquals(lname, driver.findElement(By.xpath("//tbody//td[4]/a")).getText());
