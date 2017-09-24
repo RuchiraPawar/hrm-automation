@@ -15,17 +15,17 @@ public class POMTestCase extends AdminLogin {
 
 	private DashBoardPage dashBoardPage;
 	private AssignLeavePage assignLeavePage;
-	private LocalizationPage localizationPage;
+	
 
 	@Before
 	public void setUp() throws Exception {
 		dashBoardPage = new DashBoardPage(driver);
 		assignLeavePage = new AssignLeavePage(driver);
-		localizationPage = new LocalizationPage(driver);
+		
 		login();
 	}
 
-	@Test
+	//@Test
 	public void validLoginTest() {
 
 		By locator = By.cssSelector(".head > h1:nth-child(1)");
@@ -37,7 +37,7 @@ public class POMTestCase extends AdminLogin {
 
 	}
 
-	@Test
+	//@Test
 	public void quickLaunchTest() {
 		By locator = By.xpath("//span[@class='quickLinkText' and contains(text(),'Assign Leave')]");
 		dashBoardPage.launch("Assign Leave");
@@ -47,14 +47,6 @@ public class POMTestCase extends AdminLogin {
 
 	}
 
-	@Test
-	public void configLocalization() throws InterruptedException {
-		By locator = By.id("localizationHeading");
-		localizationPage.adminClick();
-		String actual = localizationPage.getHeader(locator);
-
-		assertEquals("Localization", actual);
-
-	}
+	
 
 }
