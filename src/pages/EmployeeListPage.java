@@ -21,7 +21,7 @@ public class EmployeeListPage extends BasePage {
 
 	}
 
-	public void sort() {
+	public void sort(int columnNumber) {
 		String secondName = "";
 		int rowCount = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr")).size();
 		System.out.println(rowCount);
@@ -38,7 +38,7 @@ public class EmployeeListPage extends BasePage {
 			driver.findElement(By.linkText("" + j + "")).click();
 			String firstRecord = wait
 					.until(ExpectedConditions
-							.presenceOfElementLocated(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[1]/td[3]/a")))
+							.presenceOfElementLocated(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[1]/td["+columnNumber+"]/a")))
 					.getText();
 			int rowCount1 = driver.findElements(By.xpath("//table[@id='resultTable']/tbody/tr")).size();
 
@@ -48,9 +48,9 @@ public class EmployeeListPage extends BasePage {
 			assertTrue(secondName.compareToIgnoreCase(firstRecord) <= 0);
             int i=1;
 			while ( i< rowCount1) {
-				String firstName = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[" + i + "]/td[3]/a"))
+				String firstName = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[" + i + "]/td["+columnNumber+"]/a"))
 						.getText();
-				secondName = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[" + (i + 1) + "]/td[3]/a"))
+				secondName = driver.findElement(By.xpath("//*[@id=\"resultTable\"]/tbody/tr[" + (i + 1) + "]/td["+columnNumber+"]/a"))
 						.getText();
 				
 				assertTrue(firstName.compareToIgnoreCase(secondName) <= 0);
@@ -58,6 +58,14 @@ public class EmployeeListPage extends BasePage {
 			}
 
 		}
+	}
+
+	public void clickLasttName() {
+		
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("resultTable")));
+		driver.findElement(By.xpath("//*[@id=\"resultTable\"]/thead/tr/th[4]/a")).click();
+
+		
 	}
 
 }

@@ -20,11 +20,14 @@ public class EmployeeSortingPOMTestCase extends AdminLogin {
 
 	@Test
 	public void test() {
-		
+		int columnNumberOfFirstName=3;
+		int columnNumberOfLastName=4;
 		employeeListPage.gotoPage();
 		employeeListPage.clickFirstName();
-		employeeListPage.sort();
 		
+		employeeListPage.sort(columnNumberOfFirstName);
+		employeeListPage.clickLasttName();
+		employeeListPage.sort(columnNumberOfLastName);
 		//assertEquals(expected, actual);
 		
 	}
