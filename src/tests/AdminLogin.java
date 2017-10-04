@@ -3,7 +3,7 @@ package tests;
 import pages.LoginPage;
 
 public class AdminLogin extends BaseTest{
-	private LoginPage loginPage;
+	protected LoginPage loginPage;
 	
 	public void login() {
 		loginPage=new LoginPage(driver);

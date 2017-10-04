@@ -20,7 +20,8 @@ public class LocalizationPOMTestCase extends AdminLogin {
 	@Test
 	public void test() {
 		
-		localizationPage.gotoPage();
+		//localizationPage.gotoPage();
+		mainMenu.gotoLocalization();
 		By locator = By.id("localizationHeading");
 		localizationPage.edit();
 		localizationPage.changeLocale("zh_CN");
@@ -37,7 +38,7 @@ public class LocalizationPOMTestCase extends AdminLogin {
 		assertTrue(actual1.matches("[A-Za-z]+"));
         String message1=localizationPage.getSuccessMessage();
         System.out.println(message);
-		assertTrue(message1.matches("[A-Za-z]+"));
+		assertTrue(message1.matches("[A-Za-z\\s]+"));
 	}
 
 }
