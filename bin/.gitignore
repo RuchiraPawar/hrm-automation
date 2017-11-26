@@ -3,6 +3,14 @@
 /LocatorsTest.class
 /LoginTestCase.class
 /SearchTest.class
+/.classpath
+/.gitignore
+/.project
+/Practice/
+/general/
+/lib/
+/menues/
+/pages/
+/suites/
 /test.properties
 /tests/
-/general/

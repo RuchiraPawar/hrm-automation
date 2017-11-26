@@ -12,7 +12,7 @@ public class GetProperties {
 	private InputStream inputStream;
 
 	public GetProperties() throws IOException {
-		this("resouces/test.properties");
+		this("resources/test.properties");
 		
 		
 	}

@@ -32,7 +32,7 @@ public class BaseTest {
 	
 	@Before
 	public void baseSetUp() throws Exception {
-		System.setProperty("webdriver.Chrome.driver", "Chrome.exe");
+		System.setProperty("webdriver.chrome.driver", "src\\lib\\chromedriver2.exe");
 		driver = new ChromeDriver();
 		wait=new WebDriverWait(driver,explicitWait);
 		mainMenu=new MainMenu(driver);
